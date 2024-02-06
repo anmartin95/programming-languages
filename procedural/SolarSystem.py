@@ -12,6 +12,7 @@ planet2 = {
     'DistanceFromSun': 0.72,  
     'Diameter': 12104, 
     }
+    
 
 moon1 = {'Name': 'Luna', 'Diameter': 3474, 'Circumference': 10917}
 planet3 = {
