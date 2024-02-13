@@ -4,13 +4,17 @@ public class CelestialBody
     private double diameter;
     private double circumference;
 
+    CelestialBody()
+    {
+
+    }
+
     CelestialBody(String thisName, double thisDiameter, double thisCircumference)
     {
         name = thisName;
         if(thisDiameter == 0 && thisCircumference != 0)
         {
             circumference = thisCircumference;
-
         }
         else if (thisDiameter != 0 && thisCircumference == 0)
         {
@@ -47,5 +51,11 @@ public class CelestialBody
     public void setCircumference(double thisCircumference)
     {
         circumference = thisCircumference;
+    }
+
+    public String toString()
+    {
+        String s = "Name: " + name + ", Diameter: " + diameter + ", Circumference: " + circumference + ", ";
+        return s;
     }
 }

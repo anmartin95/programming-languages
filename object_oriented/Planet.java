@@ -4,7 +4,14 @@ public class Planet extends CelestialBody
 {
     private double distanceFromSun;
     private double orbitalPeriod;
-    private ArrayList<Moon> moons = new ArrayList<>();
+    public ArrayList<Moon> moons = new ArrayList<>();
+
+    Planet(String thisName, double thisDiameter, double thisCircumference, double thisDistance, double thisOrbitalPeriod)
+    {
+        super(thisName, thisDiameter, thisCircumference);
+        distanceFromSun = thisDistance;
+        orbitalPeriod = thisOrbitalPeriod;
+    }
 
     public double getDistanceFromSun()
     {
@@ -21,9 +28,26 @@ public class Planet extends CelestialBody
         return orbitalPeriod;
     }
 
-    public setOrbitalPeriod(double thisOrbitalPeriod)
+    public void setOrbitalPeriod(double thisOrbitalPeriod)
     {
         orbitalPeriod = thisOrbitalPeriod;
+    }
+
+    public void addMoon(Moon thisMoon)
+    {
+        moons.add(thisMoon);
+    }
+
+    public String toString()
+    {
+        String str = super.toString() + "Distance From Sun: " + distanceFromSun + ", Orbital Period: " + orbitalPeriod;
+        if (!moons.isEmpty())
+            str += ", Moons: ";
+            for(Moon m: moons)
+            {
+                str += "\n\t\t" + m.toString();
+            }
+        return str;
     }
 
 }
