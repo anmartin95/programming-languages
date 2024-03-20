@@ -163,7 +163,7 @@ let result () =
         let binlist1 = signedtobase2list num1
         let binlist2 = signedtobase2list num2
         let tmp = (ADD binlist1 binlist2)
-        let sign = if (num1+num2>=0 || num1+num2<=(-255)) then false else true
+        let sign = if (num1+num2>=0 && num1+num2<=127) then false else true
         printfn $"\t%A{binlist1} = %s{n1}"
         printfn $"ADD\t%A{binlist2} = %s{n2}"
         printfn $"--------------------------------"
@@ -179,7 +179,7 @@ let result () =
         let binlist1 = signedtobase2list num1
         let binlist2 = signedtobase2list num2
         let tmp = (SUB binlist1 binlist2)
-        let sign = if (((num1-num2)>=0) || ((num1 - num2)<=(-255))) then false else true
+        let sign = if (num1+num2>=0 && num1+num2<=127) then false else true
         printfn $"\t%A{binlist1} = %s{n1}"
         printfn $"SUB\t%A{addone (NOT binlist2)} = %s{n2}"
         printfn $"--------------------------------"
